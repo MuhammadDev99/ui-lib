@@ -1,0 +1,161 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  width: 100%;
+}
+
+.label {
+  font-size: 0.95em;
+  color: var(--black-3);
+  font-weight: 500;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  height: 2.6em;
+  background-color: var(--cold-white-2);
+  border: 0.1em solid var(--white-4);
+  border-radius: var(--border-radius-1);
+  padding: 0 0.6em;
+  gap: 0.5em;
+  transition: var(--transition);
+  position: relative;
+
+  /* ADD THIS LINE */
+  outline: 0.2em solid transparent;
+}
+
+.inputWrapper:focus-within {
+  background-color: white;
+  border-color: var(--primary-4);
+  /* This will now transition from transparent -> color-mix */
+  outline-color: color-mix(in srgb, var(--primary-4), transparent 80%);
+}
+
+.icon {
+  width: 1.1em;
+  height: 1.1em;
+  color: var(--black-4);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.95em;
+  height: 100%;
+  color: var(--black-1);
+  font-family: inherit;
+}
+
+.applyBtn {
+  background: var(--primary-3);
+  color: white;
+  border: none;
+  padding: 0.3em 1em;
+  border-radius: calc(var(--border-radius-1) - 0.125em);
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.applyBtn:hover:not(:disabled) {
+  background: var(--primary-2);
+}
+
+.applyBtn:disabled {
+  background: var(--white-4);
+  cursor: not-allowed;
+}
+
+/* Error State */
+.negative {
+  border-color: var(--color-red-4) !important;
+}
+
+.errorMessage {
+  color: var(--color-red-4);
+  font-size: 0.8em;
+  margin-top: 0.2em;
+}
+
+/* Applied State */
+.appliedBadge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6em 0.8em;
+  background-color: color-mix(in srgb, #10b981, transparent 92%);
+  border: 0.0625em dashed #10b981;
+  border-radius: var(--border-radius-1);
+  animation: slideIn 0.3s ease-out;
+}
+
+.badgeInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.checkIcon {
+  color: #10b981;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.textStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.couponName {
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #065f46;
+}
+
+.successMsg {
+  font-size: 0.75em;
+  color: #059669;
+}
+
+.removeBtn {
+  background: white;
+  border: 0.0625em solid #ddd;
+  color: #666;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.removeBtn:hover {
+  background: var(--color-red-1);
+  color: var(--color-red-4);
+  border-color: var(--color-red-4);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.3125em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.closeIcon {
+  width: 1em;
+  height: 1em;
+}

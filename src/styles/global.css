@@ -1,5 +1,13 @@
 /* CSS Custom Properties (variables) – no element selectors */
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;700;900&family=Inter:wght@400;700;900&family=Kanit:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600&display=swap");
+
+/* * {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+} */
+
 :root {
+  /* font-size: 3vh; */
   /* --- Layout & Metrics --- */
   --border-radius: 0.3em;
   --border-radius-1: 0.3em;

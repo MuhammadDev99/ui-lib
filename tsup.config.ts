@@ -10,6 +10,6 @@ export default defineConfig({
   loader: {
     '.css': 'local-css',
   },
-  external: ['react', 'react-dom', 'clsx', 'lucide-react'],
+  external: ['react', 'react-dom', 'clsx', 'lucide-react', 'react-phone-number-input'],
   banner: { js: '"use client";' },
 });

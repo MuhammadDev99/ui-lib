@@ -1,0 +1,165 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: inherit;
+}
+
+.labelWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3em;
+  color: #374151;
+}
+
+.labelWrapper .icon {
+  height: 1.1em;
+  width: 1.1em;
+  color: inherit;
+}
+
+.label {
+  /* font-weight: 600; */
+  font-size: 1.1em;
+  margin-bottom: 0.4em;
+}
+
+/* --- THE MAIN WRAPPER --- */
+.inputWrapper {
+  background-color: #ffffff;
+  border: 0.0625em solid #d1d5db;
+  /* 0.0625em equivalent */
+  border-radius: 0.5em;
+  /* 0.5em equivalent */
+  box-shadow: 0 0.0625em 0.125em 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+/* Beautiful modern focus ring */
+.inputWrapper:focus-within {
+  border-color: #3b82f6;
+  /* 0.1875em equivalent ring */
+  box-shadow: 0 0 0 0.1875em rgba(59, 130, 246, 0.2);
+}
+
+/* Error State Ring */
+.inputError {
+  border-color: #ef4444 !important;
+}
+
+.inputError:focus-within {
+  box-shadow: 0 0 0 0.1875em rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Success State Ring */
+.inputSuccess {
+  border-color: #10b981 !important;
+}
+
+.inputSuccess:focus-within {
+  box-shadow: 0 0 0 0.1875em rgba(16, 185, 129, 0.2) !important;
+}
+
+/* --- THE LIBRARY OVERRIDES --- */
+.phoneInput {
+  display: flex;
+  align-items: center;
+  direction: ltr;
+  width: 100%;
+}
+
+/* The Country Picker Area (Flag + Arrow) */
+.phoneInput :global(.PhoneInputCountry) {
+  display: flex;
+  align-items: center;
+  padding: 0.6em 0.8em;
+  background-color: #f9fafb;
+  border-right: 0.0625em solid #e5e7eb;
+  margin-right: 0.5em;
+}
+
+/* Removes the default ugly outline from the library's select element */
+.phoneInput :global(.PhoneInputCountrySelect:focus) {
+  outline: none;
+}
+
+/* The Input Field */
+.phoneInput :global(.PhoneInputInput) {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0.6em 0.8em 0.6em 0;
+  font-size: 1em;
+  color: #111827;
+  letter-spacing: 0.0625em;
+  /* 0.0625em equivalent */
+}
+
+/* Placeholder styling */
+.phoneInput :global(.PhoneInputInput::placeholder) {
+  color: #9ca3af;
+  letter-spacing: normal;
+}
+
+/* --- STATUS MESSAGES --- */
+.statusContainer {
+  min-height: 1.5em;
+  margin-top: 0.4em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.icon {
+  width: 0.9em;
+  /* 0.875em equivalent */
+  height: 0.9em;
+  margin-left: 0.25em;
+  /* 0.25em equivalent */
+}
+
+.errorText,
+.successText {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.errorText {
+  color: var(--color-red-4);
+}
+
+.successText {
+  color: #10b981;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25em);
+    /* 0.25em equivalent */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Status icon size and colour */
+.statusIcon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+/* Required star */
+.requiredStar {
+  color: var(--color-red-3);
+}
+
+/* Already have .container, .labelWrapper, .inputWrapper, etc. */

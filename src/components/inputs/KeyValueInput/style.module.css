@@ -1,0 +1,73 @@
+/* KeyValueInput/style.module.css */
+
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.label {
+    font-size: 1.1em;
+    color: var(--black-3);
+    margin: 0;
+}
+
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.keyInput,
+.valueInput {
+    flex: 1;
+    min-width: 0;
+}
+
+.separator {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--gray-4);
+    margin: 0 0.1em;
+    user-select: none;
+}
+
+.removeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.8em;
+    height: 1.8em;
+    border: none;
+    background: transparent;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+    color: var(--gray-4);
+    transition: var(--transition);
+    padding: 0;
+}
+
+.removeButton:hover:not(:disabled) {
+    background-color: var(--negative-9);
+    color: var(--negative-3);
+}
+
+.removeButton:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+}
+
+.addButton {
+    align-self: flex-start;
+}

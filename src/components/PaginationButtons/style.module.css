@@ -1,0 +1,98 @@
+/* PaginationButtons/style.module.css */
+
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  gap: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: var(--white-light-2);
+}
+
+/* Base button style (matching Button component's .container) */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius-1);
+  border: 0.1em solid transparent;
+  background-color: var(--white-1);
+  border-color: var(--white-3);
+  color: var(--black-3);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  font-family: inherit;
+}
+
+/* Hover state */
+.button:hover:not(:disabled) {
+  background-color: var(--white-light-2);
+}
+
+/* Disabled state */
+.button:disabled {
+  background-color: #dadada;
+  color: #5e5e5e;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+/* Selected (current page) – use primary variant from Button */
+.numberedButtons .button.selected,
+.numberedButtons .button.selected:hover {
+  background-color: var(--primary-4);
+  color: var(--white-1);
+  border-color: var(--primary-4);
+}
+
+/* Selected hover (keep same as selected to avoid changes) */
+.numberedButtons .button.selected:hover {
+  background-color: var(--primary-4);
+}
+
+/* Override the general hover for selected button */
+.numberedButtons .button.selected:hover {
+  background-color: var(--primary-4);
+}
+
+/* Hidden measurement layer – identical to visible buttons but off-screen */
+.hiddenMeasurement {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  /* same as .numberedButtons gap */
+  pointer-events: none;
+  z-index: -1;
+  white-space: nowrap;
+}
+
+.numberedButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.sideButton {
+  flex-shrink: 0;
+}

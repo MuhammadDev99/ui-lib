@@ -1,0 +1,117 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.card {
+  max-width: 34.375em;
+  /* Widened slightly to fit stack traces */
+  width: 100%;
+  background: #ffffff;
+  border: 0.0625em solid #eaeaea;
+  border-radius: 1.25em;
+  padding: 2.5em;
+  text-align: center;
+  box-shadow: 0 0.625em 1.875em rgba(0, 0, 0, 0.08);
+}
+
+.iconCircle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.75em;
+  height: 3.75em;
+  border-radius: 1.125em;
+  background: #fff5f5;
+  color: #e53e3e;
+  margin-bottom: 1.25em;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 0.5em;
+}
+
+.message {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.retryButton {
+  background: #1a202c;
+  color: white;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 0.625em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.detailsToggle {
+  background: transparent;
+  color: #718096;
+  border: none;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Technical Details Section */
+.detailsArea {
+  margin-top: 1.5em;
+  text-align: left;
+  background: #f8fafc;
+  border: 0.0625em solid #e2e8f0;
+  border-radius: 0.75em;
+  padding: 1em;
+  animation: slideDown 0.3s ease-out;
+}
+
+.digestRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-bottom: 0.5em;
+  color: #64748b;
+}
+
+.stackTrace {
+  font-family: ui-monospace, monospace;
+  font-size: 0.7rem;
+  color: #475569;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  max-height: 12.5em;
+  overflow-y: auto;
+  line-height: 1.4;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-0.625em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.errorIcon {
+  height: 2.5em;
+  width: 2.5em;
+}

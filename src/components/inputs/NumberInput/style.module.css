@@ -1,0 +1,233 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  width: 100%;
+  min-width: 0;
+}
+
+.root .label {
+  font-size: 1.1em;
+  color: var(--black-3);
+  transition: var(--transition);
+  margin: 0;
+}
+
+.root:has(.inputWrapper:focus-within) .label {
+  color: var(--primary-2);
+}
+
+.root .inputWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: var(--border-radius-1);
+  border: 0.08em solid var(--white-4);
+  background-color: white;
+  height: 2.3em;
+  padding: 0 0.4em;
+  gap: 0.3em;
+  box-sizing: border-box;
+  transition: var(--transition);
+  position: relative;
+  /* This prevents internal elements from overlapping the rounded corners */
+  overflow: hidden;
+  outline: 0.16em solid transparent;
+  width: 100%;
+}
+
+
+.root.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.root .inputWrapper:focus-within {
+  outline: 0.16em solid color-mix(in srgb, var(--primary-4), transparent 80%);
+  border-color: var(--primary-4);
+}
+
+.root .inputWrapper .unit {
+  color: var(--gray-3);
+  pointer-events: none;
+  user-select: none;
+}
+
+.root .input {
+  min-width: 0;
+  height: 100%;
+  border: none !important;
+  outline: none;
+  background: transparent;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+  caret-color: var(--primary-3);
+  flex: 1;
+}
+
+/* FIX: Ensure number arrows (spin buttons) stay inside the input and are aligned */
+.root .input::-webkit-outer-spin-button,
+.root .input::-webkit-inner-spin-button {
+  height: 1.5em;
+  margin: 0;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Validation Styles */
+.root.required .label::after {
+  content: '*';
+  margin-left: 0.2em;
+  color: var(--color-red-3);
+}
+
+.root.negative .inputWrapper {
+  border-color: var(--color-red-4);
+}
+
+.root.negative .inputWrapper:focus-within {
+  border-color: var(--color-red-4);
+  outline-color: var(--color-red-1);
+}
+
+.root .message {
+  margin: 0.2em 0 0 0;
+  font-size: 0.75em;
+}
+
+.root.negative .message {
+  color: var(--color-red-4);
+}
+
+.root .inputWrapper {
+  border: 0.1em solid var(--white-4);
+  background-color: var(--cold-white-2);
+  outline: 0.2em solid transparent;
+}
+
+.root .inputWrapper:focus-within {
+  outline: 0.2em solid color-mix(in srgb, var(--primary-4), transparent 80%);
+  border-color: var(--primary-4);
+}
+
+.root .inputWrapper:has(input:not(:placeholder-shown)) {
+  background-color: white
+}
+
+/* Custom spinner buttons container */
+.spinnerButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 0.1em;
+}
+
+/* Individual spin button */
+.spinButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 0.2em;
+  transition: var(--transition);
+  padding: 0;
+  margin: 0;
+}
+
+/* Icon inside the spin button */
+.spinIcon {
+  width: 0.9em;
+  height: 0.9em;
+  color: var(--gray-3);
+  transition: var(--transition);
+}
+
+/* Hover and active states */
+.spinButton:hover:not(:disabled) {
+  background-color: var(--primary-light-1);
+}
+
+.spinButton:hover:not(:disabled) .spinIcon {
+  color: var(--primary-5);
+}
+
+.spinButton:active:not(:disabled) {
+  background-color: var(--primary-light-2);
+}
+
+.spinButton:active:not(:disabled) .spinIcon {
+  color: var(--primary-2);
+}
+
+.spinButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.spinButton:disabled .spinIcon {
+  color: var(--gray-5);
+}
+
+/* Spinner buttons container */
+.spinnerButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 0.1em;
+}
+
+.spinButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 0.2em;
+  transition: var(--transition);
+  padding: 0;
+  margin: 0;
+}
+
+.spinIcon {
+  width: 0.9em;
+  height: 0.9em;
+  color: var(--gray-3);
+  transition: var(--transition);
+}
+
+.spinButton:hover:not(:disabled) {
+  background-color: var(--primary-light-1);
+}
+
+.spinButton:hover:not(:disabled) .spinIcon {
+  color: var(--primary-4);
+}
+
+.spinButton:active:not(:disabled) {
+  background-color: var(--primary-light-2);
+}
+
+.spinButton:active:not(:disabled) .spinIcon {
+  color: var(--primary-2);
+}
+
+.spinButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.spinButton:disabled .spinIcon {
+  color: var(--gray-5);
+}

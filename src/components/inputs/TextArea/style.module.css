@@ -1,0 +1,107 @@
+/* TextArea/style.module.css */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Label styling */
+.root .label {
+  font-size: 1.1em;
+  color: var(--black-3);
+  transition: var(--transition);
+}
+
+/* Wrapper – now a flex column that fills available space */
+.root .inputWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* takes remaining vertical space inside .root */
+  min-height: 0;
+  /* allows shrinking */
+  width: 100%;
+}
+
+/* Textarea – flex item that stretches to fill the wrapper height */
+.root .input {
+  outline: none;
+  resize: none;
+  min-width: 0;
+  box-sizing: border-box;
+  font-size: 1em;
+  padding: 0.3em 0.4em;
+  padding-bottom: 1.5em;
+  /* room for the character counter */
+  width: 100%;
+  flex: 1;
+  /* fill vertical space */
+  min-height: 0;
+  /* critical: allows shrinking below content size */
+
+  border-radius: var(--border-radius-1);
+  border: 0.1em solid var(--white-4);
+  caret-color: var(--primary-3);
+  transition: var(--transition);
+  background-color: var(--cold-white-2);
+  outline: 0.2em solid transparent;
+}
+
+/* Background changes when text is present */
+.root .input:not(:placeholder-shown) {
+  background-color: white;
+}
+
+/* Focus state */
+.root .input:focus {
+  outline: 0.2em solid color-mix(in srgb, var(--primary-4), transparent 80%);
+  border-color: var(--primary-4);
+  background-color: white;
+}
+
+/* Label colour when input is focused */
+.root:has(.input:focus) .label {
+  color: var(--primary-2);
+}
+
+/* Required indicator */
+.root.required .label::after {
+  content: '*';
+  margin-left: 0.2em;
+  color: var(--color-red-3);
+}
+
+/* Error state */
+.root.negative .input {
+  border-color: var(--color-red-4);
+}
+
+.root.negative .input:focus {
+  border-color: var(--color-red-4);
+  outline-color: var(--color-red-1);
+}
+
+/* Helper / error message */
+.root .message {
+  margin-top: 0.2em;
+  font-size: 0.75em;
+}
+
+.root.negative .message {
+  color: var(--color-red-4);
+}
+
+/* Character counter (absolute positioned inside wrapper) */
+.root .inputWrapper .counter {
+  position: absolute;
+  bottom: 0.3em;
+  /* slight offset from the very bottom */
+  left: 1em;
+  font-size: 0.8em;
+  color: var(--gray-4);
+  pointer-events: none;
+}
