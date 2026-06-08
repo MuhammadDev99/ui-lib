@@ -1,0 +1,17 @@
+/* CSS variables and global resets */
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --gray-200: #e5e7eb;
+  --gray-800: #1f2937;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
