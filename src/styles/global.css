@@ -1,19 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;700;900&family=Inter:wght@400;700;900&family=Kanit:wght@400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600&display=swap");
-
-* {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
-}
-
-button {
-  font-size: inherit;
-  padding: 0;
-}
-
-
+/* CSS Custom Properties (variables) – no element selectors */
 :root {
   /* --- Layout & Metrics --- */
-  /* font-size: 3vh; */
   --border-radius: 0.3em;
   --border-radius-1: 0.3em;
   --border-radius-2: 0.6em;
@@ -226,7 +213,7 @@ button {
     0 0 0 0.2em var(--background-color),
     0 0 0 0.4em var(--primary-5);
 
-  /* --- Themed Colors (Red, Orange, Yellow, Green, Blue, Purple, Pink) --- */
+  /* --- Themed Colors --- */
   --color-red-1: #ffebee;
   --color-red-2: #ef9a9a;
   --color-red-3: #f44336;
@@ -263,7 +250,7 @@ button {
   --color-pink-4: #c2185b;
   --color-pink-5: #880e4f;
 
-  /* --- Accent Colors (Amethyst, Mango, Flamingo, Azure, Matcha, Cherry, Aqua) --- */
+  /* --- Accent Colors --- */
   --color-amethyst-1: #f4ebff;
   --color-amethyst-2: #d6bbfb;
   --color-amethyst-3: #9e77ed;
@@ -299,49 +286,4 @@ button {
   --color-aqua-3: #20c9ac;
   --color-aqua-4: #118a76;
   --color-aqua-5: #0a4c40;
-}
-
-body {
-  background-color: var(--background-color);
-  font-family: var(--font-4);
-  color: var(--text-1);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* @media (max-aspect-ratio: 9/16) {
-    :root {
-        font-size: 2vh;
-    }
-} */
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-}
-
-img {
-  object-fit: contain;
-  width: auto;
 }
