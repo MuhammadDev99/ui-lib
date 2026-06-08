@@ -1,6 +1,6 @@
 {
    "name": "@muhammad_dev_77/ui-lib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -22,5 +22,6 @@
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
     "vite": "^5.4.10"
-  }
+  },
+    "files": ["dist", "README.md"]
 }
