@@ -6,7 +6,7 @@ export default defineConfig({
   dts: true,
   clean: true,
   splitting: false,
-  injectStyle: true, // Auto-injects CSS into JS
+  injectStyle: false, 
   external: ['react', 'react-dom', 'clsx', 'lucide-react'],
   banner: { js: '"use client";' },
 });
